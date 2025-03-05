@@ -4,7 +4,15 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [index, setIndex] = useState(0);
+
+  const onNextCLick = () => {
+    if (index === 15) {
+      setIndex(0);
+    } else {
+      setIndex(index + 1);
+    }
+  }
 
   return (
     <>
@@ -15,8 +23,8 @@ function App() {
           <h4>Easy: Green | Medium: Yellow | Hard: Orange | Impossible: Red</h4>
           <h4>Four subjects: Math, English, Science, History</h4>
           <h5>Number of cards: 16</h5>
-          <Flashcard />
-          <button>⭢</button>
+          <Flashcard cardNumber={index}/>
+          <button onClick={onNextCLick}>⭢</button>
         </div>
       </div>
     </>

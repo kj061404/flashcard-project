@@ -6,7 +6,7 @@ function App() {
   const [index, setIndex] = useState(0);
 
   const onNextClick = () => {
-    if (index === 15) {
+    if (index === 16) {
       setIndex(0);
     } else {
       setIndex(index + 1);

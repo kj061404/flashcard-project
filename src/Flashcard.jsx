@@ -13,9 +13,12 @@ function Flashcard({ cardNumber }) {
     };
 
     return (
-        <div     className={isFlipped ? "cardBack" : "cardFront"} onClick={handleClick} style={cardStyle}>
-            <div className="front" style={cardStyle}> {isFlipped ? '' : cards[cardNumber].front} </div>
-            <div className="back" style={cardStyle}> {isFlipped ? cards[cardNumber].back : ''} </div>
+        <div className={isFlipped ? "cardBack" : "cardFront"} onClick={handleClick} style={cardStyle}>
+            {isFlipped ? 
+                <div className="back" style={cardStyle}> {isFlipped ? cards[cardNumber].back : ''} </div> 
+                : 
+                <div className="front" style={cardStyle}> {isFlipped ? '' : cards[cardNumber].front} </div>
+            }
         </div>
     );
 }
